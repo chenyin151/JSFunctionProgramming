@@ -7,3 +7,10 @@ function warn(thing) {
 function note(thing) {
     console.log(['NOTE:', thing].join(' '));
 }
+function existy(x) {
+    console.log('existy', x)
+    return x != null;
+}
+function truthy(x) {
+    return (x !== false) && existy(x);
+}

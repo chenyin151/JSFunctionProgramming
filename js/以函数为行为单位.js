@@ -28,4 +28,42 @@ function lameCSV(str) {
     }, [])
 }
 var peopleTable = lameCSV('name,age,hair\nMerble,35,red\nBob, 64, blonde');
+// function selectNames(table) {
+//     return _.rest(_.map(table, _.first));
+// }
+// function selectAges(table) {
+//     return _.rest(_.map(table, second));
+// }
+// function selectHairColor(table) {
+//     return _.rest(_.map(table, function(row) {
+//         return naiveNth(row, 2);
+//     }))
+// }
+// var mergeResults = _.zip;
+console.log(existy((function(){})()));
+console.log(truthy(false))
+// selectNames(peopleTable)
 console.log(naiveNth(['a','b','c'], 1))
+function doWhen(cond, action) {
+    if (truthy(cond)) {
+        return action();
+    } else {
+        console.log(undefined)
+        return undefined;
+    }
+}
+        
+doWhen('', function(){console.log('hello world')})
+
+function executeIfHasField(target, name) {
+    return doWhen(existy(target[name]), function(){
+        var result = _.result(target, name);
+        console.log(['The result is', result].join(' '));
+        return result;
+    })
+}
+executeIfHasField([1,2,3], 'reverse');
+executeIfHasField([1,2,3], 'notHere')
+console.log('--------------------------------------')
+let a = [null,undefined,1,2,false]
+console.log(a.map(existy))
